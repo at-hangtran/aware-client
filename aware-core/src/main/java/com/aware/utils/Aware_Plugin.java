@@ -156,7 +156,7 @@ public class Aware_Plugin extends Service {
      * - ACTION_AWARE_SYNC_DATA: sends the data to the server
      * @author denzil
      */
-    public static class ContextBroadcaster extends BroadcastReceiver {
+    public class ContextBroadcaster extends BroadcastReceiver {
         private ContextProducer cp;
         private String tag;
         private String provider;
@@ -183,7 +183,7 @@ public class Aware_Plugin extends Service {
                     e.printStackTrace();
                 }
             }
-            if (intent.getAction().equals(Aware.ACTION_AWARE_SYNC_DATA) && provider.length() > 0) {
+            if (intent.getAction().equals(Aware.ACTION_AWARE_SYNC_DATA) && AUTHORITY.length() > 0) {
                 Bundle sync = new Bundle();
                 sync.putBoolean(ContentResolver.SYNC_EXTRAS_MANUAL, true);
                 sync.putBoolean(ContentResolver.SYNC_EXTRAS_EXPEDITED, true);
@@ -192,7 +192,7 @@ public class Aware_Plugin extends Service {
         }
     }
 
-    private static ContextBroadcaster contextBroadcaster = null;
+    private ContextBroadcaster contextBroadcaster = null;
 
     @Override
     public IBinder onBind(Intent arg0) {
