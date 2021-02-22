@@ -1,4 +1,4 @@
-include ':com.aware.plugin.beacon.lib'
+
 include ':aware-core', ':aware-phone', ":aware-tests"
 
 include ':com.aware.plugin.device_usage'
@@ -35,5 +35,7 @@ include ':com.aware.plugin.sensortag'
 project(':com.aware.plugin.sensortag').projectDir = new File('com.aware.plugin.sensortag/com.aware.plugin.sensortag.lib')
 
 include ':com.aware.plugin.sentimental'
-project(':com.aware.plugin.beacon.lib').projectDir = new File(rootDir, 'com.aware.plugin.beacon/com.aware.plugin.beacon.lib/')
 project(':com.aware.plugin.sentimental').projectDir = new File('com.aware.plugin.sentimental/com.aware.plugin.sentimental.lib')
+
+include ':com.aware.plugin.beacon'
+project(':com.aware.plugin.beacon').projectDir = new File('com.aware.plugin.beacon/com.aware.plugin.beacon.lib')
