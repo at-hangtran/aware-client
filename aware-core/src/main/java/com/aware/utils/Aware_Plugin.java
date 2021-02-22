@@ -60,7 +60,7 @@ public class Aware_Plugin extends Service {
     /**
      * Integration with sync adapters
      */
-    public String AUTHORITY = "";
+    public static String AUTHORITY = "";
 
     @Override
     public void onCreate() {
@@ -187,7 +187,7 @@ public class Aware_Plugin extends Service {
                 Bundle sync = new Bundle();
                 sync.putBoolean(ContentResolver.SYNC_EXTRAS_MANUAL, true);
                 sync.putBoolean(ContentResolver.SYNC_EXTRAS_EXPEDITED, true);
-                ContentResolver.requestSync(Aware.getAWAREAccount(context), provider, sync);
+                ContentResolver.requestSync(Aware.getAWAREAccount(context), AUTHORITY, sync);
             }
         }
     }
